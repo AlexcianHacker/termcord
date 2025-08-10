@@ -37,4 +37,5 @@ def main(token: str = None,
                                   prefix=hyprefix, 
                                   token=token); 
     else: result_ = initialize_tn(token, prefix=hyprefix); 
+  else: print("Error (-3): Improper Or No Token Has Been Passed. "); return result_:= -3; 
   return result_; 
