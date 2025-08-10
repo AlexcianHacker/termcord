@@ -9,19 +9,32 @@ from itertools import cycle;
 import random; 
 
 
-def main(panels: bool = True) -> int: 
+def main(token: str = None, 
+        login: list[str] = None; 
+        dual: bool = True; 
+        panels: bool = True
+        hyprefix: str = None) -> int: 
   if panels: import tkinter; 
+  result_: int = 0; 
   
   def initialize_tn(token: str, 
                     prefix: str = None) -> int: 
+    result_i: int = 0; 
     
-    return 
+    return result_i; 
   
   def initialize_login(eml: str, 
                       pswd: str, 
                       prefix: str = None, 
                       token: str = None) -> int: 
+    result_i: int = 0; 
     
-    return 
+    return result_i; 
   
-  return 0; 
+  if token != None: 
+    if login != None: result_=initialize_login(login[0], 
+                                  login[1], 
+                                  prefix=hyprefix, 
+                                  token=token); 
+    else: result_ = initialize_tn(token, prefix=hyprefix); 
+  return result_; 
