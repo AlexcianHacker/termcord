@@ -10,32 +10,42 @@ import random;
 
 
 def main(token: str = None, 
-        login: list[str] = None; 
-        dual: bool = True; 
-        panels: bool = True
+        login: list[str] = None, 
+        dual: bool = True, 
+        simple: bool = False, 
+        panels: bool = True, 
         hyprefix: str = None) -> int: 
   if panels: import tkinter; 
   result_: int = 0; 
   
-  def initialize_tn(token: str, 
-                    prefix: str = None) -> int: 
+  def initialize_UI(user,) -> int: 
+    if not simple: 
+      ## Regular Mode 
+    else: 
+      ## Simple Mode 
+  
+  def initialize_tn(token: str) -> int: 
     result_i: int = 0; 
     
+    user = None; 
+    print("[OK] Login Initialized..."); 
+    initialize_UI(user); 
     return result_i; 
   
   def initialize_login(eml: str, 
                       pswd: str, 
-                      prefix: str = None, 
                       token: str = None) -> int: 
     result_i: int = 0; 
     
+    user = None; 
+    print("[OK] Login Initialized..."); 
+    initialize_UI(user); 
     return result_i; 
   
   if token != None: 
     if login != None: result_=initialize_login(login[0], 
                                   login[1], 
-                                  prefix=hyprefix, 
                                   token=token); 
-    else: result_ = initialize_tn(token, prefix=hyprefix); 
+    else: result_ = initialize_tn(token); 
   else: print("Error (-3): Improper Or No Token Has Been Passed. "); return result_:= -3; 
   return result_; 
